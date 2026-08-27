@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/collection/automobiles",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 1040,
+      "bodyTextHash": "886d92ea4036b06b6521b570170b12400171da24c24027696ba025725902cecc",
+      "bodyTextPrefix": "UM UC.MICHAELS RESIDENCES AUTOMOBILES TIMEPIECES JEWELRY FRAGRAN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/automobiles.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 980,
+      "bodyTextHash": "c27bf0d2f3f203f60f963a29b379ab60527c6e17ac356ca81b0974e7a8eef161",
+      "bodyTextPrefix": "UM UC.MICHAELS SALE · RENT · SWAP Automobiles Sale, chauffeur-re",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/automobiles-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/automobiles.json"
+}

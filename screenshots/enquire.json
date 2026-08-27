@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/enquire",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 1128,
+      "bodyTextHash": "5a433011befaa31b4a7ee67daf3546ad4ceb73469962e13f17ec6146cca21ce0",
+      "bodyTextPrefix": "UM UC.MICHAELS RESIDENCES AUTOMOBILES TIMEPIECES JEWELRY FRAGRAN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/enquire.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 1068,
+      "bodyTextHash": "0618fec879137d3018f0e9835110ab0dc817d739ad7271d03dacba090ce9bf83",
+      "bodyTextPrefix": "UM UC.MICHAELS THE DESK Enquire privately. Residences, automobil",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/enquire-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/enquire.json"
+}

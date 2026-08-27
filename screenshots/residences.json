@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/collection/residences",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 1437,
+      "bodyTextHash": "2931373c17c41565f208cc53100136a083bf7b570e51e94a3a5c40487cbe6482",
+      "bodyTextPrefix": "UM UC.MICHAELS RESIDENCES AUTOMOBILES TIMEPIECES JEWELRY FRAGRAN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/residences.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 1377,
+      "bodyTextHash": "3d68246752b9137994edd79dc7e63742c787e46b9211f94f5fd14ea1d1dfc914",
+      "bodyTextPrefix": "UM UC.MICHAELS SALE · RENT · SHORT LET Residences Penthouses, du",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/residences-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/residences.json"
+}

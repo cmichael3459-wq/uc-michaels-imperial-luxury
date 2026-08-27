@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 3134,
+      "bodyTextHash": "c074f9468ea79944100ea146eb0f757669b2ed3744e4f6c13729fa0e85e90466",
+      "bodyTextPrefix": "UM UC.MICHAELS RESIDENCES AUTOMOBILES TIMEPIECES JEWELRY FRAGRAN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "UC.MICHAELS IMPERIAL LUXURY",
+      "hasCanvas": false,
+      "bodyTextLen": 3082,
+      "bodyTextHash": "cf4d8a87b740a053db75f7545dcb1419239664047004b19d0fed785f01e848b3",
+      "bodyTextPrefix": "UM UC.MICHAELS Enquire PRIVATE DESK · LAGOS Imperial living, on ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
