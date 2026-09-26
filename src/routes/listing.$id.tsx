@@ -6,25 +6,28 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   COLLECTIONS,
-  getListing,
   OFFER_LABEL,
-  relatedListings,
 } from "@/lib/catalog";
+import { getListingById, getAllListings, seedListingsIfEmpty } from "@/lib/listings-db";
 import { defaultEnquiry, SITE, whatsappHref } from "@/lib/site";
 
 export const Route = createFileRoute("/listing/$id")({
+  loader: async ({ params }) => {
+    await seedListingsIfEmpty();
+    const listing = await getListingById(params.id);
+    if (!listing) throw notFound();
+    const all = await getAllListings();
+    const related = all
+      .filter((item) => item.collection === listing.collection && item.id !== listing.id)
+      .slice(0, 3);
+    return { listing, related };
+  },
   component: ListingPage,
 });
 
 function ListingPage() {
-  const { id } = Route.useParams();
-  const listing = getListing(id);
-  if (!listing) {
-    throw notFound();
-  }
-
+  const { listing, related } = Route.useLoaderData();
   const collection = COLLECTIONS.find((c) => c.slug === listing.collection);
-  const related = relatedListings(listing);
 
   return (
     <SiteShell>
