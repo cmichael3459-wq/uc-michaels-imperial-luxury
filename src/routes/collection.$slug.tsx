@@ -5,29 +5,33 @@ import { SiteShell } from "@/components/layout/site-shell";
 import { Button } from "@/components/ui/button";
 import {
   getCollection,
-  listingsFor,
   OFFER_LABEL,
   type OfferType,
+  type Listing,
 } from "@/lib/catalog";
+import { getListingsForCollection, seedListingsIfEmpty } from "@/lib/listings-db";
 import { defaultEnquiry, whatsappHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/collection/$slug")({
+  loader: async ({ params }) => {
+    await seedListingsIfEmpty();
+    const collection = getCollection(params.slug);
+    if (!collection) throw notFound();
+    const items = await getListingsForCollection(collection.slug);
+    return { collection, items };
+  },
   component: CollectionPage,
 });
 
 function CollectionPage() {
-  const { slug } = Route.useParams();
-  const collection = getCollection(slug);
-  if (!collection) {
-    throw notFound();
-  }
-
+  const { collection, items: allItems } = Route.useLoaderData();
   const [offer, setOffer] = useState<OfferType | "all">("all");
-  const items = useMemo(
-    () => listingsFor(collection.slug, offer),
-    [collection.slug, offer],
-  );
+
+  const items = useMemo(() => {
+    if (offer === "all") return allItems;
+    return allItems.filter((item: Listing) => item.offer === offer);
+  }, [allItems, offer]);
 
   const filters: Array<OfferType | "all"> = ["all", ...collection.offers];
 
@@ -101,7 +105,7 @@ function CollectionPage() {
             </div>
           ) : (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {items.map((item) => (
+              {items.map((item: Listing) => (
                 <ListingCard key={item.id} listing={item} />
               ))}
             </div>
