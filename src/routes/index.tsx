@@ -3,11 +3,19 @@ import { ArrowRight } from "lucide-react";
 import { ListingCard } from "@/components/listing-card";
 import { SiteShell } from "@/components/layout/site-shell";
 import { Button } from "@/components/ui/button";
-import { COLLECTIONS, featuredListings } from "@/lib/catalog";
+import { COLLECTIONS } from "@/lib/catalog";
+import { getAllListings, seedListingsIfEmpty } from "@/lib/listings-db";
 import { SITE, defaultEnquiry, whatsappHref } from "@/lib/site";
 
-export const Route = createFileRoute("/")({ component: Home });
-
+export const Route = createFileRoute("/")({
+  loader: async () => {
+    await seedListingsIfEmpty();
+    const all = await getAllListings();
+    const featured = all.filter((item) => item.featured);
+    return { featured };
+  },
+  component: Home,
+});
 const STEPS = [
   {
     n: "01",
@@ -32,7 +40,7 @@ const STEPS = [
 ];
 
 function Home() {
-  const featured = featuredListings();
+  const { featured } = Route.useLoaderData();
 
   return (
     <SiteShell>
