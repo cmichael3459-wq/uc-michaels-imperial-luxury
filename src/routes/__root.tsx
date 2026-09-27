@@ -16,10 +16,10 @@ const APP_NAME = SITE.name;
 
 export const Route = createRootRoute({
   head: () => ({
-  meta: [ <meta name="google-site-verification" content="RCMrTxum3KP_WIUh-Y7RHggYgsrLsapLkzfFeHWNyuE" />
+  meta: [
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
-    {
+    { name="google-site-verification" content="RCMrTxum3KP_WIUh-Y7RHggYgsrLsapLkzfFeHWNyuE" />
       title:
         "UC.MICHAELS IMPERIAL LUXURY | Residences, Cars, Watches & More — Lagos,Delta",
     },
