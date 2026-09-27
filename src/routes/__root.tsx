@@ -19,6 +19,8 @@ export const Route = createRootRoute({
   meta: [
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
+    
+        //GOOGLE SITE VERIFICATION 
     { name: "google-site-verification", content: "RCMrTxum3KP_WIUh-Y7RHggYgsrLsapLkzfFeHWNyuE" },
       title:
         "UC.MICHAELS IMPERIAL LUXURY | Residences, Cars, Watches & More — Lagos,Delta",
