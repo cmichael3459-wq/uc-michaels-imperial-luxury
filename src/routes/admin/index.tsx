@@ -11,6 +11,7 @@ import {
   deleteListing,
 } from "@/lib/listings-db";
 import { COLLECTION_SLUGS, OFFER_LABEL, type OfferType } from "@/lib/catalog";
+import { uploadImage } from "@/lib/upload";
 
 // Simple password gate for admin (set ADMIN_PASSWORD in env, default "ucadmin")
 const ADMIN_PASSWORD =
@@ -78,6 +79,7 @@ function AdminPage() {
   const [editing, setEditing] = useState<Listing | null>(null);
   const [status, setStatus] = useState("");
   const [saving, setSaving] = useState(false);
+const [uploading, setUploading] = useState(false);
 
   async function unlock(e: React.FormEvent) {
     e.preventDefault();
@@ -288,14 +290,45 @@ function AdminPage() {
                 />
               </label>
               <label className="block text-xs tracking-wider text-stone uppercase sm:col-span-2">
-                Image path (e.g. /images/apt-banana.jpg)
-                <input
-                  className="mt-1 w-full border border-line bg-ink px-3 py-2 text-ivory"
-                  value={editing.image}
-                  onChange={(e) =>
-                    setEditing({ ...editing, image: e.target.value })
-                  }
-                />
+                Image
+                <div className="mt-1 flex items-center gap-3">
+                  {editing.image && (
+                    <img
+                      src={editing.image}
+                      alt=""
+                      className="h-16 w-16 border border-line object-cover"
+                    />
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    disabled={uploading}
+                    className="w-full border border-line bg-ink px-3 py-2 text-ivory"
+                    onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+                      setUploading(true);
+                      try {
+                        const formData = new FormData();
+                        formData.append("file", file);
+                        formData.append("password", password);
+                        const result = await uploadImage({ data: formData });
+                        setEditing((prev) =>
+                          prev ? { ...prev, image: result.url } : prev,
+                        );
+                      } catch (err) {
+                        setStatus(
+                          err instanceof Error ? err.message : "Upload failed",
+                        );
+                      } finally {
+                        setUploading(false);
+                      }
+                    }}
+                  />
+                  {uploading && (
+                    <span className="text-xs text-stone">Uploading…</span>
+                  )}
+                </div>
               </label>
               <label className="block text-xs tracking-wider text-stone uppercase sm:col-span-2">
                 Description
