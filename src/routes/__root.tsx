@@ -16,7 +16,7 @@ const APP_NAME = SITE.name;
 
 export const Route = createRootRoute({
   head: () => ({
-  meta: [
+  meta: [ <meta name="google-site-verification" content="RCMrTxum3KP_WIUh-Y7RHggYgsrLsapLkzfFeHWNyuE" />
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     {
